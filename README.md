@@ -1,30 +1,38 @@
-# Project Name
+# Ruby dev task
 
-Welcome to Project Name! This README will guide you through the setup process.
+Welcome to Project Name! This project is built using Ruby on Rails and utilizes PostgreSQL for database management.
 
 ## Prerequisites
 
-Make sure you have the following software installed before proceeding:
+Before you begin, ensure you have the following environment set up:
 
 - Ruby version 3.2.2
-- Postgres version 7.0.7
+- PostgreSQL version 7.0.7
 
-If you haven't installed Ruby yet, you can do so using a version manager like `rbenv` or `rvm`.
+## Installation
 
-```sh
-# Using rbenv
-rbenv install 3.2.2
-rbenv global 3.2.2
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
 
-# Using rvm
-rvm install 3.2.2
-rvm use 3.2.2 --default
+## Setup
 
+In your terminal, run the following commands:
 
-* How to run the test suite
+1. Install required gems using Bundler:
+   ```bash
+   bundle install
+2. Create the database:
+   ```bash
+   rails db:create
+3. Run the database migrations:
+   ```bash
+   rails db:migrate
+4. (Optional) Seed the database with sample data:
+   ```bash
+   rails db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
+## Usage
+After completing the setup, you can start the Rails server using the following command:
+ ```bash
+rails server
 
-* Deployment instructions
-
-* ...
