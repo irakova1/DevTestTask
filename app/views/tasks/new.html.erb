@@ -1,0 +1,44 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal col">
+    <h1>New task</h1>
+    <%= form_with model: @task, method: :post, data: { turbo: 'false' }  do |form| %>
+
+
+        <div>
+            <%= form.label :title, style: "display: block", class: 'name' %>
+            <%= form.text_field :title,  style: "width: 70%" %>
+        </div>
+
+        <div>
+            <%= form.label :'Complete Status',  style: "display: block", class: 'name' %>
+            <%= form.check_box :completed, style: 'left: 0, "width: 70%'%>
+        </div>
+
+        <div>
+            <%= form.label :due_date,  style: "display: block", class: 'name' %>
+            <%= form.date_field :due_date , value: @task.due_date.present? ? Date.parse(@task.due_date).strftime('%Y-%m-%d') : Date.today.strftime('%Y-%m-%d'), style: "width: 70%"%>
+        </div>
+        <br>
+        <% if @task.errors.any? %>
+                <ul class="error">
+                    <% @task.errors.each do |error| %>
+                        <li><%= error.full_message %></li>
+                    <% end %>
+                </ul>
+        <% end %>
+        <br>
+
+        <div class='row space-between'>
+            <%= form.submit "Create", data: {
+                controller: "modals",
+                action: "modals#close"
+            }, class: "submit-button" %>
+            <%= link_to "Cancel", '/', data: {
+                controller: "modals",
+                action: "modals#close"
+            }, class: "cancel-button" %>
+
+        </div>
+    <% end %>
+  </div>
+<% end %>

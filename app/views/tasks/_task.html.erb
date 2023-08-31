@@ -1,0 +1,11 @@
+
+<div class=" col info">
+  <p class="name"> Title:</p>
+  <p class="value"> <%= @task.title %> </p>
+
+  <p class="name"> Status: </p>
+  <p class="value"> <%= @task.completed ? 'Completed' : 'Incomplete' %></p>
+
+  <p class="name"> Due date: </p>
+  <p class="value"> <%= @task.due_date %> </p>
+</div>

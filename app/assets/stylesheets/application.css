@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+    padding: 30px;
+    margin: 0px;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    padding: 2em;
+    width: 200px;
+    /* Centering */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    /* Add the drop shadow */
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.19);
+}
+
+.cancel-button {
+    background-color: white;
+    font-size: small;
+    color:  #1530ff;
+    padding: 6px 10px;
+    border:  0.05em solid #1530ff;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+}
+
+.cancel-button:hover {
+    background-color: rgba(199, 199, 199, 0.283);
+}
+
+.submit-button  {
+    background-color: #1530ff;
+    font-size: small;
+    color:  white;
+    padding: 6px 10px;
+    border:  0.05em solid #1530ff;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.submit-button:hover{
+    background-color: rgb(0, 30, 255);
+}
+
+.edit-button{
+    background-color: white;
+    font-size: small;
+    color:  #1530ff;
+    padding: 6px 10px;
+    border:  0.05em solid #1530ff;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+}
+
+.edit-button:hover {
+    background-color: rgba(199, 199, 199, 0.283);
+}
+
+.add-button  {
+    background-color: #1530ff;
+    font-size: small;
+    color:  white;
+    padding: 6px 10px;
+    border:  0.05em solid #1530ff;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    height: fit-content;
+    align-self: center;
+}
+
+
+.add-button:hover{
+    background-color: rgb(0, 30, 255);
+}

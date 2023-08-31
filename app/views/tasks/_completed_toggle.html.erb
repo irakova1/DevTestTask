@@ -1,0 +1,4 @@
+<%= form_with url: complete_task_path(task), class: 'compl row', method: :put do |form| %>
+  <%= form.label :Done, style: task.completed ? 'color: green' : 'color: red' %>
+  <%= form.check_box :Done, class: 'checkbox', checked: task.completed, onchange: 'this.form.submit(); ' %>
+<% end %>

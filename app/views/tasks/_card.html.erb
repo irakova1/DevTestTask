@@ -1,0 +1,24 @@
+
+<turbo-stream action='replace' target="<%= dom_id task %>">
+    <template>
+        <div class="task-card col space-between">
+            <div class="row space-between">
+                <%= turbo_frame_tag "#{dom_id task}_toogle" do %>
+                        <%= render partial: 'completed_toggle', locals: { task: task } %>
+                <% end %>
+
+                <%= link_to "Edit", edit_task_path(task), data: { turbo_frame: "modal" }, class: "edit-button" %>
+            </div>
+
+            <!-- Task title -->
+            <div class="task-title">
+                <p><%= link_to task.title, task_path(task.id), class: "task-link"%></p>
+            </div>
+
+            <!-- Due date -->
+            <div class="due-date">
+                <%= task.due_date %>
+            </div>
+        </div>
+    </template>
+</turbo-stream>

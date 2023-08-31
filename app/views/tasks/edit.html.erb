@@ -1,0 +1,40 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal col">
+    <h1>Editing task</h1>
+    <%= form_with model: @task, method: :put, data: { turbo: 'false' } do |form| %>
+
+        <div>
+            <%= form.label :title, style: "display: block", class: 'name' %>
+            <%= form.text_field :title, value: @task.title,  style: "width: 70%" %>
+        </div>
+
+        <div>
+            <%= form.label :complete_status,  style: "display: block", class: 'name' %>
+            <%= form.check_box :completed, checked: @task.completed, style: 'left: 0, width: 70%' %>
+        </div>
+
+        <div>
+            <%= form.label :due_date,  style: "display: block", class: 'name' %>
+            <%= form.date_field :due_date, value: @task.due_date,  style: "width: 70%"  %>
+        </div>
+        <br>
+        <% if @task.errors.any? %>
+                <ul class="error">
+                    <% @task.errors.each do |error| %>
+                        <li style="font-size: x-small, left: 0"><%= error.full_message %></li>
+                    <% end %>
+                </ul>
+        <% end %>
+        <br>
+
+        <div class='row space-between'>
+            <%= form.submit 'Update', class: "submit-button"%>
+            <%= link_to "Cancel", '/', data: {
+                controller: "modals",
+                action: "modals#close"
+            }, class: "cancel-button" %>
+            
+        </div>
+    <% end %>
+  </div>
+<% end %>

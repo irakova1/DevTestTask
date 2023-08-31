@@ -1,0 +1,11 @@
+
+<div class="row space-between">
+<%= link_to tasks_path do%>
+    <%= image_tag "back.svg" %>
+<%end%>
+<%= button_to @task, method: :delete , class: 'img-btn' do %>
+    <%= image_tag "delete.svg" %>
+<% end %>
+</div>
+<h1 class='details'>Task Details</h1>
+<%= render @task %>
